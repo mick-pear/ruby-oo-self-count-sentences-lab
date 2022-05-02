@@ -1,20 +1,19 @@
 require 'pry'
 
 class String
+    def sentence?
+        self[-1] == "."
+    end
 
-  def sentence?
-    
-  end
+    def question?
+        self.end_with?("?")
+    end
 
-  def question?
+    def exclamation?
+        self.end_with?("!")
+    end
 
-  end
-
-  def exclamation?
-
-  end
-
-  def count_sentences
-
-  end
+    def count_sentences
+        self.split(/[.?!] /).count
+    end
 end
